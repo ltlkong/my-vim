@@ -17,8 +17,6 @@ installMiniMap() {
 	wget $minimapBaseUrl$1.tar.gz
 	tar -xf $1.tar.gz
 	sudo cp ./$1/code-minimap /usr/local/bin
-	node -v
-	npm install -g npm
 	sudo rm -r $1**
 }
 
@@ -42,6 +40,8 @@ installNode() {
 	tar -xf ./$1.tar.gz
 	sudo cp -r ./$1/* /usr/local
 	sudo rm -r $1*
+	node -v
+	sudo npm install -g npm
 }
 
 case $(uname -m) in
