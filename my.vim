@@ -86,7 +86,6 @@ set hidden
 set shiftwidth=4
 set wrap
 set nu
-set cursorline
 set wildmenu
 syntax enable
 set tabstop=4
