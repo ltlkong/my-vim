@@ -17,6 +17,8 @@ installMiniMap() {
 	wget $minimapBaseUrl$1.tar.gz
 	tar -xf $1.tar.gz
 	sudo cp ./$1/code-minimap /usr/local/bin
+	node -v
+	npm install -g npm
 	sudo rm -r $1**
 }
 
