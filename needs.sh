@@ -8,5 +8,9 @@ cd code-minimap-v0.6.1-i686-unknown-linux-musl
 sudo cp code-minimap /usr/local/bin
 cd ..
 sudo rm -r code-minimap* 
+echo start setting up vimrc
+cat my.vim > ~/.vimrc
+vim +PluginInstall +qall
+echo finish setting up vimrc
 echo success
 
