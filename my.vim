@@ -9,6 +9,7 @@ call plug#begin()
 				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'Yggdroot/indentLine'	
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
+	Plug 'https://github.com/ap/vim-css-color.git'
 call plug#end()
 						
 "Default key
