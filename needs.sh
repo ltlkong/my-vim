@@ -12,14 +12,14 @@ MINIMAPLINKAARCH64='https://github.com/wfxr/code-minimap/releases/download/v0.6.
 
 if [ $BuildC = 'aarch64' ]
 then 
-	wget $MINIMAPLINKAARCH64 -o minimap.tar.gz
+	wget $MINIMAPLINKAARCH64 -o code-minimap.tar.gz
 else 
-	wget $MINIMAPLINKAMD64 -o minimap.tar.gz
+	wget $MINIMAPLINKAMD64 -o code-minimap.tar.gz
 fi
 
 tar -xf minimap.tar.gz 
 sudo cp minimap/code-minimap /usr/local/bin
-sudo rm -r minimap* 
+sudo rm -r code-minimap* 
 echo finish installing minimp
 
 echo start setting up vimrc
