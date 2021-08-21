@@ -18,5 +18,9 @@ cat my.vim > ~/.vimrc
 vim +PluginInstall +qall
 echo finish setting up vimrc
 
+echo start setting coc-setting
+sudo cp ./coc-settings.json ~/.vim/
+echo end setting coc-setting
+
 echo success
 
