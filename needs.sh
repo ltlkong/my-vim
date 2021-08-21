@@ -1,37 +1,45 @@
 sudo apt update
 
-BUILDC=$(uname -m)
+RED='\033[0;31m'
+NC='\033[0m'
 
-echo start installing ripgrep
+
+echo -e  ${RED}start installing ripgrep${NC}
 sudo apt install -y ripgrep
-echo finish installing ripgrep
+echo -e ${RED}finish installing ripgrep${NC}
 
-echo start installing minimap
-MINIMAPLINKAMD64='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/code-minimap-v0.6.1-i686-unknown-linux-musl.tar.gz'
-MINIMAPLINKAARCH64='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/code-minimap-v0.6.1-aarch64-unknown-linux-gnu.tar.gz'
+echo -e ${RED}start installing minimap${NC}
+MINIMAPLINKAMD64='code-minimap-v0.6.1-i686-unknown-linux-musl'
+MINIMAPLINKAARCH64='code-minimap-v0.6.1-aarch64-unknown-linux-gnu'
 
-if [ $BuildC='aarch64' ]
-then 
-	wget $MINIMAPLINKAARCH64 -o code-minimap.tar.gz
-else 
-	wget $MINIMAPLINKAMD64 -o code-minimap.tar.gz
-fi
+installMiniMap() {
+	local minimapBaseUrl='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/'
 
-tar -xf minimap.tar.gz 
-sudo cp minimap/code-minimap /usr/local/bin
-sudo rm -r code-minimap* 
-echo finish installing minimp
+	wget $minimapBaseUrl$1'.tar.gz'
+	tar -xf $1'.tar.gz'
+	sudo cp $1'/code-minimap' '/usr/local/bin'
+	sudo rm -r code-minimap*
+}
 
-echo start setting up vimrc
+case $(uname -m) in
+	'aarch64') installMiniMap $MINIMAPLINKAARCH64
+		;;
+	*) installMiniMap $MINIMAPLINKAMD64
+		;;
+esac
+
+echo -e ${RED}finish installing minimp${NC}
+
+echo -e ${RED}start setting up vimrc${NC}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat my.vim > ~/.vimrc
 vim +silent +PlugInstall +CocInstall +qa
-echo finish setting up vimrc
+echo -e ${RED}finish setting up vimrc${NC}
 
-echo start setting coc-setting
+echo -e ${RED}start setting coc-setting${NC}
 sudo cp ./coc-settings.json ~/.vim/
-echo end setting coc-setting
+echo -e ${RED}end setting coc-setting${NC}
 
-echo success
+echo -e ${RED}success${NC}
 
