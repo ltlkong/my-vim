@@ -14,8 +14,10 @@ sudo rm -r code-minimap*
 echo finish installing minimp
 
 echo start setting up vimrc
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat my.vim > ~/.vimrc
-vim +PluginInstall +qall
+vim +silent +PlugInstall +CocInstall +qa
 echo finish setting up vimrc
 
 echo start setting coc-setting
