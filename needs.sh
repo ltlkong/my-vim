@@ -60,7 +60,7 @@ cat my.vim > ~/.vimrc
 vim +silent +PlugInstall +CocInstall +qa
 echo -e ${RED}finish${NC}
 
-echo -e ${RED}start setting coc-setting${NC}
+echo -e ${RED}start setting CocConfig${NC}
 sudo cp ./coc-settings.json ~/.vim/
 echo -e ${RED}finish${NC}
 
