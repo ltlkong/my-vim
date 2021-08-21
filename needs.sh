@@ -1,6 +1,6 @@
 sudo apt update
 
-BuildC = $(uname -m)
+BUILDC=$(uname -m)
 
 echo start installing ripgrep
 sudo apt install -y ripgrep
@@ -10,7 +10,7 @@ echo start installing minimap
 MINIMAPLINKAMD64='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/code-minimap-v0.6.1-i686-unknown-linux-musl.tar.gz'
 MINIMAPLINKAARCH64='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/code-minimap-v0.6.1-aarch64-unknown-linux-gnu.tar.gz'
 
-if [ $BuildC = 'aarch64' ]
+if [ $BuildC='aarch64' ]
 then 
 	wget $MINIMAPLINKAARCH64 -o code-minimap.tar.gz
 else 
