@@ -29,6 +29,10 @@ set nowritebackup
 set updatetime=500
 set shortmess+=c
 set pumheight=10
+let g:coc_global_extensions = ['coc-json', 'coc-git','coc-grammarly','coc-syntax', 'coc-marketplace', 
+			\'coc-html','coc-diagnostic','coc-calc', 'coc-tsserver', 'coc-sql', 'coc-react-refactor','coc-markdownlint', 
+			\'coc-phpls', 'coc-jedi', 'coc-css', 'coc-omnisharp']
+
 "coc-key
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
