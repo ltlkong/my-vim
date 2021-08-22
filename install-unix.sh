@@ -3,12 +3,40 @@ sudo apt update
 RED='\033[0;31m'
 NC='\033[0m'
 
+echo -e ${RED}start installing node${NC}
+sudo apt remove -y nodejs
+NODEAMD64='node-v16.7.0-linux-x64'
+NODEAARCH64='node-v16.7.0-linux-arm64'
+NODEARMV7='node-v16.7.0-linux-armv7l'
+
+installNode() {
+	local nodeBaseUrl='https://nodejs.org/dist/v16.7.0/'
+
+	wget $nodeBaseUrl$1.tar.gz
+	tar -xf ./$1.tar.gz
+	sudo cp -r ./$1/* /usr/local
+	sudo rm -r $1*
+	node -v
+}
+
+case $(uname -m) in
+	'aarch64') installNode $NODEAARCH64
+		;;
+	'armv7l') installNode $NODEARMV7
+		;;
+	*) installNode $NODEAMD64
+		;;
+esac
+
+echo -e ${RED}finish${NC}
+
 echo -e  ${RED}start installing vim${NC}
 sudo apt install -y libncurses-dev
 sudo apt remove -y vim
 git clone https://github.com/vim/vim.git
-cd vim/src
-cd src
+cd ./vim/src
+pwd
+sudo apt install -y make gcc
 make distclean  # if you build Vim before
 make
 sudo make install
@@ -44,34 +72,6 @@ case $(uname -m) in
 esac
 echo -e ${RED}finish${NC}
 
-echo -e ${RED}start installing node${NC}
-sudo apt remove -y nodejs
-NODEAMD64='node-v16.7.0-linux-x64'
-NODEAARCH64='node-v16.7.0-linux-arm64'
-NODEARMV7='node-v16.7.0-linux-armv7l'
-
-installNode() {
-	local nodeBaseUrl='https://nodejs.org/dist/v16.7.0/'
-
-	wget $nodeBaseUrl$1.tar.gz
-	tar -xf ./$1.tar.gz
-	sudo cp -r ./$1/* /usr/local
-	sudo rm -r $1*
-	node -v
-	sudo npm install -g npm
-}
-
-case $(uname -m) in
-	'aarch64') installNode $NODEAARCH64
-		;;
-	'armv7l') installNode $NODEARMV7
-		;;
-	*) installNode $NODEAMD64
-		;;
-esac
-
-echo -e ${RED}finish${NC}
-
 echo -e ${RED}start setting up vimrc${NC}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -82,6 +82,8 @@ echo -e ${RED}finish${NC}
 echo -e ${RED}start setting CocConfig${NC}
 sudo cp ./coc-settings.json ~/.vim/
 echo -e ${RED}finish${NC}
+
+source ~/.bashrc
 
 echo -e ${RED}success${NC}
 
