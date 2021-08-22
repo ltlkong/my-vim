@@ -76,7 +76,7 @@ echo -e ${RED}start setting up vimrc${NC}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat my.vim > ~/.vimrc
-vim +silent +PlugInstall +CocInstall +qa
+vim ~/.vimrc +PlugInstall +CocInstall +qa
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}start setting CocConfig${NC}
