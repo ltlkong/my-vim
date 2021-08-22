@@ -5,12 +5,12 @@ NC='\033[0m'
 
 echo -e ${RED}start installing node${NC}
 sudo apt remove -y nodejs
-NODEAMD64='node-v16.7.0-linux-x64'
-NODEAARCH64='node-v16.7.0-linux-arm64'
-NODEARMV7='node-v16.7.0-linux-armv7l'
+NODEAMD64='node-v14.17.5-linux-x64'
+NODEAARCH64='node-v14.17.5-linux-arm64'
+NODEARMV7='node-v14.17.5-linux-armv7l'
 
 installNode() {
-	local nodeBaseUrl='https://nodejs.org/dist/v16.7.0/'
+	local nodeBaseUrl='https://nodejs.org/dist/v14.17.5/'
 
 	wget $nodeBaseUrl$1.tar.gz
 	tar -xf ./$1.tar.gz
