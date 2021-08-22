@@ -32,6 +32,7 @@ echo -e ${RED}finish${NC}
 echo -e  ${RED}start installing vim${NC}
 sudo apt install -y libncurses-dev make gcc
 sudo apt remove -y vim
+git clone https://github.com/vim/vim.git
 cd ./vim/src
 pwd
 sudo apt install -y make gcc
