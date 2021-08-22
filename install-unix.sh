@@ -42,6 +42,7 @@ make
 sudo make install
 cd ../..
 rm -rf vim
+source ~/.bashrc
 echo -e ${RED}finish${NC}
 
 echo -e  ${RED}start installing ripgrep${NC}
@@ -82,8 +83,6 @@ echo -e ${RED}finish${NC}
 echo -e ${RED}start setting CocConfig${NC}
 sudo cp ./coc-settings.json ~/.vim/
 echo -e ${RED}finish${NC}
-
-source ~/.bashrc
 
 echo -e ${RED}success${NC}
 
