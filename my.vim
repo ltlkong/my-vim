@@ -18,6 +18,7 @@ set encoding=UTF-8
 				
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=25
 
 "coc
 set nobackup
@@ -44,9 +45,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 let g:coc_snippet_next = '<tab>'
-
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -83,6 +82,8 @@ set wrap
 set nu
 set wildmenu
 syntax enable
+set smartcase
+set lazyredraw
 set tabstop=4
 let g:coc_disable_startup_warning = 1
 set	backspace=indent,eol,start
