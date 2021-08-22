@@ -4,6 +4,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e  ${RED}start installing vim${NC}
+sudo apt remove -y vim
 git clone https://github.com/vim/vim.git
 cd vim/src
 cd src
