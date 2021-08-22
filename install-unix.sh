@@ -22,6 +22,7 @@ echo -e ${RED}finish${NC}
 echo -e ${RED}start installing minimap${NC}
 MINIMAPAMD64='code-minimap-v0.6.1-i686-unknown-linux-musl'
 MINIMAPAARCH64='code-minimap-v0.6.1-aarch64-unknown-linux-gnu'
+MINIMAPARMV7='code-minimap-v0.6.1-arm-unknown-linux-gnueabihf'
 
 installMiniMap() {
 	local minimapBaseUrl='https://github.com/wfxr/code-minimap/releases/download/v0.6.1/'
@@ -35,6 +36,8 @@ installMiniMap() {
 case $(uname -m) in
 	'aarch64') installMiniMap $MINIMAPAARCH64
 		;;
+	'armv7l') installMiniMap $MINIMAPARMV7
+		;;
 	*) installMiniMap $MINIMAPAMD64
 		;;
 esac
@@ -44,6 +47,7 @@ echo -e ${RED}start installing node${NC}
 sudo apt remove -y nodejs
 NODEAMD64='node-v16.7.0-linux-x64'
 NODEAARCH64='node-v16.7.0-linux-arm64'
+NODEARMV7='node-v16.7.0-linux-armv7l'
 
 installNode() {
 	local nodeBaseUrl='https://nodejs.org/dist/v16.7.0/'
@@ -58,6 +62,8 @@ installNode() {
 
 case $(uname -m) in
 	'aarch64') installNode $NODEAARCH64
+		;;
+	'armv7l') installNode $NODEARMV7
 		;;
 	*) installNode $NODEAMD64
 		;;
