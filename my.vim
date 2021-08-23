@@ -62,14 +62,15 @@ nnoremap <C-f>l :BLines<CR>
 
 "airline"
 let g:airline_theme="random"
-let airline#extensions#tabline#enabled = 1
+let airline#extensions#tabline#enabled=1
+let g:airlin_highlighting_cache=1
 
 "indentline"
-let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_defaultGroup='SpecialKey'
 
 "minimap"
-let g:minimap_width = 8
-let g:minimap_git_colors = 1
+let g:minimap_width=8
+let g:minimap_git_colors=1
 nnoremap <silent><Leader>m :MinimapToggle<CR>
 
 "Tabs
@@ -85,12 +86,11 @@ syntax enable
 set smartcase
 set lazyredraw
 set tabstop=4
-let g:coc_disable_startup_warning = 1
+let g:coc_disable_startup_warning=1
 set	backspace=indent,eol,start
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
-nnoremap <TAB> I<TAB><ESC>
-nnoremap <S-TAB> I<backspace><ESC>				
+nnoremap <C-i> <C-i>
