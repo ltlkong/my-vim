@@ -27,6 +27,7 @@ set nowritebackup
 set updatetime=500
 set shortmess+=c
 set pumheight=10
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "$ it needs to run sudo apt-get install ripgrep
 let g:coc_global_extensions = ['coc-git','coc-grammarly', 'coc-marketplace', 
 			\'coc-html','coc-diagnostic','coc-calc', 'coc-tsserver', 'coc-sql', 'coc-react-refactor','coc-markdownlint', 
@@ -69,6 +70,8 @@ nnoremap <space>c :Commands<CR>
 let g:airline_theme="random"
 let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#coc#enabled = 1
 
 "indentline"
 let g:indentLine_defaultGroup='SpecialKey'
