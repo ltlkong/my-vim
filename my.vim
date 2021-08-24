@@ -2,7 +2,8 @@ call plug#begin()
 	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 	Plug 'https://github.com/tpope/vim-fugitive.git'											
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}|
+				\ Plug 'antoinemadec/coc-fzf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
@@ -32,9 +33,9 @@ let g:coc_global_extensions = ['coc-git','coc-grammarly', 'coc-marketplace',
 			\'coc-phpls', 'coc-pyright', 'coc-css', 'coc-omnisharp']
 
 "coc-key
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>d  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
+nnoremap <silent><nowait> <space>c  :<C-u>CocFzfList commands<cr>
+nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -56,9 +57,9 @@ else
 endif
 
 "fzf
-nnoremap <C-f>r :Rg<CR>
-nnoremap <C-f>f :Files<CR>
-nnoremap <C-f>l :BLines<CR>
+nnoremap <space>r :Rg<CR>
+nnoremap <space>f :Files<CR>
+nnoremap <space>l :BLines<CR>
 
 "airline"
 let g:airline_theme="random"
