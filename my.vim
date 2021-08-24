@@ -31,7 +31,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "$ it needs to run sudo apt-get install ripgrep
 let g:coc_global_extensions = ['coc-git','coc-grammarly', 'coc-marketplace', 
 			\'coc-html','coc-diagnostic','coc-calc', 'coc-tsserver', 'coc-sql', 'coc-react-refactor','coc-markdownlint', 
-			\'coc-phpls', 'coc-pyright', 'coc-css', 'coc-omnisharp']
+			\'coc-phpls', 'coc-pyright', 'coc-css', 'coc-omnisharp', 'coc-snippets', 'coc-htmlhint']
 
 "coc-key
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
