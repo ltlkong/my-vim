@@ -4,8 +4,8 @@ call plug#begin()
 	Plug 'https://github.com/tpope/vim-fugitive.git'											
     Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
+				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'Yggdroot/indentLine'	
@@ -34,7 +34,7 @@ let g:coc_global_extensions = ['coc-git','coc-grammarly', 'coc-marketplace',
 
 "coc-key
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocFzfList commands<cr>
+nnoremap <silent><nowait> <space>cc  :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -60,6 +60,10 @@ endif
 nnoremap <space>r :Rg<CR>
 nnoremap <space>f :Files<CR>
 nnoremap <space>l :BLines<CR>
+nnoremap <space>gs :GFiles?<CR>
+nnoremap <space>g :GFiles<CR>
+nnoremap <space>m :Maps<CR>
+nnoremap <space>c :Commands<CR>
 
 "airline"
 let g:airline_theme="random"
@@ -72,7 +76,7 @@ let g:indentLine_defaultGroup='SpecialKey'
 "minimap"
 let g:minimap_width=12
 let g:minimap_git_colors=1
-nnoremap <silent><Leader>m :MinimapToggle<CR>
+nnoremap <silent><C-y> :MinimapToggle<CR>
 
 "Tabs
 nnoremap nt :tabnew<CR>
