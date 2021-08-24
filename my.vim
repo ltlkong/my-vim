@@ -29,7 +29,7 @@ set pumheight=10
 "$ it needs to run sudo apt-get install ripgrep
 let g:coc_global_extensions = ['coc-git','coc-grammarly', 'coc-marketplace', 
 			\'coc-html','coc-diagnostic','coc-calc', 'coc-tsserver', 'coc-sql', 'coc-react-refactor','coc-markdownlint', 
-			\'coc-phpls', 'coc-jedi', 'coc-css', 'coc-omnisharp']
+			\'coc-phpls', 'coc-pyright', 'coc-css', 'coc-omnisharp']
 
 "coc-key
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
