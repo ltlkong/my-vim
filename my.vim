@@ -18,7 +18,7 @@ set encoding=UTF-8
 				
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize=22
 
 "coc
 set nobackup
@@ -69,7 +69,7 @@ let g:airlin_highlighting_cache=1
 let g:indentLine_defaultGroup='SpecialKey'
 
 "minimap"
-let g:minimap_width=8
+let g:minimap_width=12
 let g:minimap_git_colors=1
 nnoremap <silent><Leader>m :MinimapToggle<CR>
 
@@ -83,8 +83,6 @@ set wrap
 set nu
 set wildmenu
 syntax enable
-set smartcase
-set lazyredraw
 set tabstop=4
 let g:coc_disable_startup_warning=1
 set	backspace=indent,eol,start
