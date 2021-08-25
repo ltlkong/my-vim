@@ -23,37 +23,3 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-snippet fc "react function component" b
-import React from 'react';
-
-function ${1}() {
-    return (
-		$2
-    )
-}
-
-export default $1;
-endsnippet
-
-snippet cc "react class component" b
-import React, { Component } from 'react';
-
-class ${1} extends Component {
-
-	state = {
-
-	}
-
-	render(){
-		return (
-			$2
-		)
-	}
-}
-
-export default $1;
-endsnippet
-
-snippet gvs "refactor state" b
-const { $1 } = this.state;
-endsnippet
