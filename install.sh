@@ -30,16 +30,15 @@ esac
 echo -e ${RED}finish${NC}
 
 echo -e  ${RED}start installing vim${NC}
-sudo apt install -y libncurses-dev make gcc
+sudo apt install -y libncurses-dev make gcc python3 python
 sudo apt remove -y vim
-git clone https://github.com/vim/vim.git
-cd ./vim/src
-pwd
-sudo apt install -y make gcc
-make distclean  # if you build Vim before
-make
-sudo make install
-cd ../..
+sudo rm /usr/local/bin/*vim*
+sudo rm /usr/bin/*vim*
+git clone https://github.com/vim/vim.git && cd vim
+echo -e  ${RED}configuring the vim feature${NC}
+./configure --enable-pythoninterp=yes --enable-python3interp=yes --prefix=/usr/local/
+make && sudo make install
+cd ..
 rm -rf vim
 source ~/.bashrc
 echo -e ${RED}finish${NC}
