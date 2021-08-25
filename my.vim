@@ -1,10 +1,10 @@
 call plug#begin()
-	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
+Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 	Plug 'https://github.com/tpope/vim-fugitive.git'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
+	Plug 'jumegunn/fzf', { 'do': { -> fzf#install() } }|
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'
@@ -101,6 +101,9 @@ nnoremap <silent><C-y> :MinimapToggle<CR>
 "Tabs
 nnoremap nt :tabnew<CR>
 
+"Terminal
+set tws=10*100
+
 "Close Tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
 
@@ -110,6 +113,7 @@ set shiftwidth=4
 set wrap
 set nu rnu
 set wildmenu
+set splitbelow splitright
 syntax enable
 set tabstop=4
 let g:coc_disable_startup_warning=1
