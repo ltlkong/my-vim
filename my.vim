@@ -1,8 +1,8 @@
 call plug#begin()
 	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
-	Plug 'https://github.com/tpope/vim-fugitive.git'											
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}|
+	Plug 'https://github.com/tpope/vim-fugitive.git'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
 				\ Plug 'junegunn/fzf.vim'
@@ -11,6 +11,7 @@ call plug#begin()
 	Plug 'Yggdroot/indentLine'	
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'https://github.com/ap/vim-css-color.git'
+	Plug 'https://github.com/alvan/vim-closetag.git'
 call plug#end()
 						
 "Default key
