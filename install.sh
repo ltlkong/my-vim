@@ -80,7 +80,7 @@ echo -e ${RED}finish${NC}
 
 echo -e ${RED}start setting CocConfig${NC}
 sudo cp ./coc-settings.json ~/.vim/
-sudo cp -r ./ultisnips ~/.config/coc/ultisnips
+sudo cp -r ./ultisnips ~/.config/coc/
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}success${NC}
