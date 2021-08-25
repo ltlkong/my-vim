@@ -101,6 +101,9 @@ nnoremap <silent><C-y> :MinimapToggle<CR>
 "Tabs
 nnoremap nt :tabnew<CR>
 
+"Close Tags
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
+
 "Other
 set hidden
 set shiftwidth=4
@@ -111,9 +114,4 @@ syntax enable
 set tabstop=4
 let g:coc_disable_startup_warning=1
 set	backspace=indent,eol,start
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
 nnoremap <C-i> <C-i>
