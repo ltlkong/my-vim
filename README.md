@@ -8,21 +8,21 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 - For Mac users, run ./install-darwin.sh.(still in testing)
 
 ## Plugs
-- NerdTree | <C-t>
-- minimap | <C-y>
+- NerdTree | &ltC-t&gt
+- minimap | &ltC-y&gt
 - fugitive (https://github.com/tpope/vim-fugitive.git')
 - coc.nvim (autocompletion):
-	- Show coc commands | <space>cc
-	- Show outline of codes | <space>o
-	- Show diagnostic | <space>d
+	- Show coc commands | &ltspace&gtcc
+	- Show outline of codes | &ltspace&gto
+	- Show diagnostic | &ltspace&gtd
 - fzf (fuzzy search):
-	- Search word recursively from the current directory | <space>r
-	- Search file from the current directory | <space>r
-	- Search line from the current buffer | <space>l
-	- Search word from the git status | <space>gs
-	- Search word from the git files | <space>g
-	- Search key mapping | <space>m
-	- Search commands | <space>c
+	- Search word recursively from the current directory | &ltspace&gtr
+	- Search file from the current directory | &ltspace&gtr
+	- Search line from the current buffer | &ltspace&gtl
+	- Search word from the git status | &ltspace&gtgs
+	- Search word from the git files | &ltspace&gtg
+	- Search key mapping | &ltspace&gtm
+	- Search commands | &ltspace&gtc
 - airline (vim status line and better tab)
 - indent line (show indent lines)
 - css-color (show color in css files)
