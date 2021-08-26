@@ -31,4 +31,5 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 ## Additional key mappings
 - New tab | nt
 
+## Example
 ![example](https://i.ibb.co/80YZ94L/2021-08-25-3.png)
