@@ -1,10 +1,10 @@
 call plug#begin()
-Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
+	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 	Plug 'https://github.com/tpope/vim-fugitive.git'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
-	Plug 'jumegunn/fzf', { 'do': { -> fzf#install() } }|
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'

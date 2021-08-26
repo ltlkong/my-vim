@@ -43,7 +43,7 @@ echo -e ${BLUE}finish${NC}
 
 #install the newest vim
 echo -e  ${BLUE}start installing vim${NC}
-sudo apt install -y libncurses-dev make gcc python3 python
+sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev
 sudo apt remove -y vim
 sudo rm /usr/local/bin/*vim*
 sudo rm /usr/bin/*vim*
