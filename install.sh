@@ -97,6 +97,7 @@ echo -e ${BLUE}finish${NC}
 
 #set up coc configs
 echo -e ${BLUE}start setting up coc${NC}
+sudo mkdir ~/.config/coc/
 sudo cp ./coc-settings.json ~/.vim/
 sudo cp -r ./ultisnips ~/.config/coc/
 echo -e ${BLUE}finish${NC}
