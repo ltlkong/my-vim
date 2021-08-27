@@ -57,7 +57,9 @@ let g:coc_global_extensions = [
 	\'coc-omnisharp', 
 	\'coc-snippets', 
 	\'coc-htmlhint',
-	\'coc-pairs'
+	\'coc-pairs',
+	\'coc-docker',
+	\'coc-webpack'
 	\]
 
 "coc-key
