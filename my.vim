@@ -112,7 +112,7 @@ nnoremap <silent><C-y> :MinimapToggle<CR>
 nnoremap nt :tabnew<CR>
 
 "Terminal
-set tws=10*100
+set tws=10*0
 
 "Close Tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
