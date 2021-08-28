@@ -18,6 +18,7 @@ call plug#end()
 "Default
 let mapleader = " "
 set encoding=UTF-8
+set fdm=marker
 let g:PaperColor_Theme_Options = {
 	\   'theme': {
 	\     'default.dark': {
@@ -126,6 +127,7 @@ set wrap
 set nu rnu
 set wildmenu
 set splitbelow splitright
+set lazyredraw
 syntax enable
 set tabstop=4
 let g:coc_disable_startup_warning=1
