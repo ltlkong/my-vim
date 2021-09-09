@@ -16,9 +16,7 @@ call plug#begin()
 call plug#end()
 						
 "Default
-let mapleader = " "
-set encoding=UTF-8
-set fdm=marker
+let mapleader = "."
 let g:PaperColor_Theme_Options = {
 	\   'theme': {
 	\     'default.dark': {
@@ -27,7 +25,18 @@ let g:PaperColor_Theme_Options = {
   	\   }
   	\ }
 colorscheme PaperColor
+au BufNewFile,BufRead *.cshtml set filetype=html
+set encoding=UTF-8
 set background=dark
+set hidden
+set shiftwidth=4
+set wrap
+set nu rnu
+set wildmenu
+set splitbelow splitright
+set tabstop=4
+set	backspace=indent,eol,start
+nnoremap <C-i> <C-i>
 
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
@@ -40,7 +49,7 @@ set updatetime=500
 set shortmess+=c
 set pumheight=10
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"$ it needs to run sudo apt-get install ripgrep
+let g:coc_disable_startup_warning=1
 let g:coc_global_extensions = [
 	\'coc-git',
 	\'coc-grammarly', 
@@ -120,16 +129,3 @@ set tws=10*0
 "Close Tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
 
-"Other
-set hidden
-set shiftwidth=4
-set wrap
-set nu rnu
-set wildmenu
-set splitbelow splitright
-set lazyredraw
-syntax enable
-set tabstop=4
-let g:coc_disable_startup_warning=1
-set	backspace=indent,eol,start
-nnoremap <C-i> <C-i>

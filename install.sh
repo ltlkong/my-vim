@@ -41,7 +41,7 @@ case $(uname -m) in
 esac
 echo -e ${BLUE}finish${NC}
 
-#install the newest vim
+#install and compile the newest vim
 echo -e  ${BLUE}start installing vim${NC}
 sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev
 sudo apt remove -y vim
@@ -89,18 +89,11 @@ echo -e ${BLUE}finish${NC}
 
 #install vim-plug and set up vimrc
 echo -e ${BLUE}start setting up vimrc${NC}
-sudo cat my.vim > ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qa
 echo -e ${BLUE}finish${NC}
 
-#set up coc configs
-echo -e ${BLUE}start setting up coc${NC}
-sudo mkdir ~/.config/coc/
-sudo cp ./coc-settings.json ~/.vim/
-sudo cp -r ./ultisnips ~/.config/coc/
-echo -e ${BLUE}finish${NC}
+source ./setup.sh
 
 echo -e ${BLUE}success${NC}
 
