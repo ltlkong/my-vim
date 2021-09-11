@@ -88,7 +88,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-let g:coc_snippet_next = '<tab>'
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -108,7 +107,7 @@ nnoremap <space>m :Maps<CR>
 nnoremap <space>c :Commands<CR>
 
 "airline"
-let g:airline_theme="random"
+let g:airline_theme="cool"
 let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
