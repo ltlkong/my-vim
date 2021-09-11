@@ -88,7 +88,7 @@ esac
 echo -e ${BLUE}finish${NC}
 
 #install vim-plug and set up vimrc
-echo -e ${BLUE}start setting up vimrc${NC}
+echo -e ${BLUE}start installing up vimrc${NC}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo -e ${BLUE}finish${NC}

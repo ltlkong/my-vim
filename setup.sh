@@ -5,7 +5,7 @@ BLUE='\033[0;34m'
 # Setup vimrc
 echo -e ${BLUE}start setting up myvim${NC}
 sudo cat my.vim > ~/.vimrc
-vim +PlugInstall +qa
+vim +silent +PlugInstall +qa
 # Setup coc
 sudo mkdir -p ~/.config/coc/
 sudo cp ./coc-settings.json ~/.vim/

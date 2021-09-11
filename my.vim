@@ -31,12 +31,14 @@ set background=dark
 set hidden
 set shiftwidth=4
 set wrap
+set lazyredraw
 set nu rnu
 set wildmenu
 set splitbelow splitright
 set tabstop=4
 set	backspace=indent,eol,start
 nnoremap <C-i> <C-i>
+nnoremap n n
 
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
@@ -121,7 +123,7 @@ let g:minimap_git_colors=1
 nnoremap <silent><C-y> :MinimapToggle<CR>
 
 "Tabs
-nnoremap nt :tabnew<CR>
+nnoremap tt :tabnew<CR>
 
 "Terminal
 set tws=10*0
