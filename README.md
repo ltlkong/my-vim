@@ -32,5 +32,5 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 - closetag (closetag in html)
 
 ## Additional key mappings
-- New tab | nt
+- New tab | tt
 
