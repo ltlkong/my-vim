@@ -17,28 +17,35 @@ call plug#end()
 						
 "Default
 let mapleader = "."
-let g:PaperColor_Theme_Options = {
-	\   'theme': {
-	\     'default.dark': {
-	\       'transparent_background': 1
-  	\     }
-  	\   }
-  	\ }
-colorscheme PaperColor
 au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
-set background=dark
 set hidden
 set shiftwidth=4
 set wrap
 set lazyredraw
-set nu rnu
 set wildmenu
 set splitbelow splitright
 set tabstop=4
 set	backspace=indent,eol,start
 nnoremap <C-i> <C-i>
 nnoremap n n
+
+"Theme
+let g:PaperColor_Theme_Options = {
+	\   'theme': {
+	\     'default': {
+	\       'transparent_background': 1
+  	\     }
+  	\   }
+  	\ }
+set t_Co=256
+set background=dark
+
+"if strftime("%H") < 10
+"	set background=light
+"else
+"	set background=dark
+"endif
 
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
@@ -107,7 +114,7 @@ nnoremap <space>m :Maps<CR>
 nnoremap <space>c :Commands<CR>
 
 "airline"
-let g:airline_theme="cool"
+let g:airline_theme="papercolor"
 let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
@@ -130,3 +137,11 @@ set tws=10*0
 "Close Tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
 
+"Line number
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
