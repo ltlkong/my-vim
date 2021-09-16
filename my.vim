@@ -8,7 +8,7 @@ call plug#begin()
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'
-	Plug 'Yggdroot/indentLine'	
+	Plug 'yaocccc/vim-hlchunk'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'https://github.com/ap/vim-css-color.git'
 	Plug 'https://github.com/alvan/vim-closetag.git'
@@ -21,12 +21,18 @@ au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
 set hidden
 set shiftwidth=4
+set tabstop=4
+set autoindent
+set smarttab
+set smartindent
 set wrap
 set lazyredraw
 set wildmenu
 set splitbelow splitright
-set tabstop=4
 set	backspace=indent,eol,start
+set incsearch
+set smartcase
+set signcolumn=number
 nnoremap <C-i> <C-i>
 nnoremap n n
 
@@ -97,13 +103,6 @@ function! s:check_back_space() abort
 endfunction
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
 "fzf
 nnoremap <space>r :Rg<CR>
 nnoremap <space>f :Files<CR>
@@ -119,9 +118,6 @@ let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#coc#enabled = 1
-
-"indentline"
-let g:indentLine_defaultGroup='SpecialKey'
 
 "minimap"
 let g:minimap_width=12
@@ -145,3 +141,6 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
+
+"hlchunk
+let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
