@@ -1,7 +1,7 @@
 call plug#begin()
 	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
-	Plug 'https://github.com/tpope/vim-fugitive.git'
+	Plug 'tpope/vim-fugitive'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
@@ -10,13 +10,13 @@ call plug#begin()
 				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'yaocccc/vim-hlchunk'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
-	Plug 'https://github.com/ap/vim-css-color.git'
-	Plug 'https://github.com/alvan/vim-closetag.git'
+	Plug 'alvan/vim-closetag'
 	Plug 'NLKNguyen/papercolor-theme'
+	Plug 'easymotion/vim-easymotion'
 call plug#end()
 						
 "Default
-let mapleader = "."
+let mapleader = ","
 au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
 set hidden
@@ -33,6 +33,7 @@ set	backspace=indent,eol,start
 set incsearch
 set smartcase
 set signcolumn=number
+set cursorline
 nnoremap <C-i> <C-i>
 nnoremap n n
 
@@ -119,6 +120,9 @@ let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#coc#enabled = 1
 
+"indentline"
+let g:indentLine_defaultGroup='SpecialKey'
+
 "minimap"
 let g:minimap_width=12
 let g:minimap_git_colors=1
@@ -144,3 +148,9 @@ augroup END
 
 "hlchunk
 let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
+
+"easymotion
+let g:EasyMotion_do_mapping = 0
+nmap  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>f <Plug>(easymotion-lineforward)
+nmap <Leader>b <Plug>(easymotion-linebackward)
