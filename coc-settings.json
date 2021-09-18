@@ -1,5 +1,16 @@
 {
-	"list.nextKeymap": "<down>",
-	"list.previousKeymap": "<up>",
-	"pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"]
+  "list.nextKeymap": "<down>",
+  "list.previousKeymap": "<up>",
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "csharp",
+    "scss"
+  ]
 }

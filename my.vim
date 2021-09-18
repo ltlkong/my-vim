@@ -20,8 +20,8 @@ let mapleader = ","
 au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
 set hidden
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set autoindent
 set smarttab
 set smartindent
@@ -85,7 +85,8 @@ let g:coc_global_extensions = [
 	\'coc-htmlhint',
 	\'coc-pairs',
 	\'coc-docker',
-	\'coc-webpack'
+	\'coc-webpack',
+	\'coc-prettier'
 	\]
 
 "coc-key
