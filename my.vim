@@ -118,5 +118,3 @@ set tws=10*0
 "easymotion
 let g:EasyMotion_do_mapping = 0
 nmap  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>f <Plug>(easymotion-lineforward)
-nmap <Leader>b <Plug>(easymotion-linebackward)
