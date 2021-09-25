@@ -150,5 +150,3 @@ let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
 "easymotion
 let g:EasyMotion_do_mapping = 0
 nmap  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>f <Plug>(easymotion-lineforward)
-nmap <Leader>b <Plug>(easymotion-linebackward)
