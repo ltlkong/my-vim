@@ -8,10 +8,7 @@ call plug#begin()
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'
-	Plug 'yaocccc/vim-hlchunk'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
-	Plug 'tpope/vim-surround'
-	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'easymotion/vim-easymotion'
 call plug#end()
 						
@@ -20,7 +17,6 @@ let mapleader = ","
 au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
 set hidden
-set rnu
 set shiftwidth=2
 set tabstop=2
 set autoindent
@@ -33,27 +29,10 @@ set splitbelow splitright
 set	backspace=indent,eol,start
 set incsearch
 set smartcase
-set signcolumn=number
-set cursorline
+set signcolumn=auto
+set rnu
 nnoremap <C-i> <C-i>
 nnoremap n n
-
-"Theme
-let g:PaperColor_Theme_Options = {
-	\   'theme': {
-	\     'default': {
-	\       'transparent_background': 1
-  	\     }
-  	\   }
-  	\ }
-set t_Co=256
-set background=dark
-
-"if strftime("%H") < 10
-"	set background=light
-"else
-"	set background=dark
-"endif
 
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
@@ -135,9 +114,6 @@ nnoremap tt :tabnew<CR>
 
 "Terminal
 set tws=10*0
-
-"hlchunk
-let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
 
 "easymotion
 let g:EasyMotion_do_mapping = 0
