@@ -135,8 +135,6 @@ nnoremap tt :tabnew<CR>
 "Terminal
 set tws=10*0
 
-"Close Tags
-
 "Line number
 set number
 
