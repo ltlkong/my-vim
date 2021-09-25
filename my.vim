@@ -10,7 +10,7 @@ call plug#begin()
 				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'yaocccc/vim-hlchunk'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
-	Plug 'alvan/vim-closetag'
+	Plug 'tpope/vim-surround'
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'easymotion/vim-easymotion'
 call plug#end()
@@ -136,7 +136,6 @@ nnoremap tt :tabnew<CR>
 set tws=10*0
 
 "Close Tags
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.cshtml'
 
 "Line number
 set number
