@@ -20,6 +20,7 @@ let mapleader = ","
 au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
 set hidden
+set rnu
 set shiftwidth=2
 set tabstop=2
 set autoindent
@@ -134,15 +135,6 @@ nnoremap tt :tabnew<CR>
 
 "Terminal
 set tws=10*0
-
-"Line number
-set number
-
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-augroup END
 
 "hlchunk
 let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
