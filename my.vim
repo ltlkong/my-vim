@@ -8,7 +8,6 @@ call plug#begin()
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'vim-airline/vim-airline'|
 				\ Plug 'vim-airline/vim-airline-themes'
-	Plug 'yaocccc/vim-hlchunk'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
 	Plug 'NLKNguyen/papercolor-theme'
@@ -144,11 +143,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
-"hlchunk
-let g:hlchunk_files = '*.ts,*.js,*.json,*.go,*.c,*.tsx,*.jsx,*.cs'
-
 "easymotion
 let g:EasyMotion_do_mapping = 0
 nmap  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>f <Plug>(easymotion-lineforward)
-nmap <Leader>b <Plug>(easymotion-linebackward)
