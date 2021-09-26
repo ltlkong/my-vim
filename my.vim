@@ -31,7 +31,7 @@ set splitbelow splitright
 set	backspace=indent,eol,start
 set incsearch
 set smartcase
-set signcolumn=number
+set signcolumn=auto
 set cursorline
 nnoremap <C-i> <C-i>
 nnoremap n n
