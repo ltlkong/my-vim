@@ -33,6 +33,7 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 	- Change surround | cs
 	- Add surround | ys
 	- Delete surround | ds
+- easy motion | &lt;leader&gt;w
 
 ## Additional key mappings
 - New tab | tt
