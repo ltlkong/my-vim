@@ -29,7 +29,10 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 - airline (vim status line and better tab)
 - indent line (show indent lines)
 - css-color (show color in css files)
-- closetag (closetag in html)
+- vim surround:
+	- Change surround | cs
+	- Add surround | ys
+	- Delete surround | ds
 
 ## Additional key mappings
 - New tab | tt
