@@ -12,6 +12,7 @@ call plug#begin()
 	Plug 'tpope/vim-surround'
 	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'easymotion/vim-easymotion'
+	Plug 'jiangmiao/auto-pairs'
 call plug#end()
 						
 "Default
@@ -34,7 +35,6 @@ set smartcase
 set signcolumn=auto
 set cursorline
 nnoremap <C-i> <C-i>
-nnoremap n n
 
 "Theme
 let g:PaperColor_Theme_Options = {
@@ -82,7 +82,6 @@ let g:coc_global_extensions = [
 	\'coc-omnisharp', 
 	\'coc-snippets', 
 	\'coc-htmlhint',
-	\'coc-pairs',
 	\'coc-docker',
 	\'coc-webpack',
 	\'coc-prettier'
