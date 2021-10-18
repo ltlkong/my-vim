@@ -86,22 +86,22 @@ let g:coc_global_extensions = [
 	\'coc-webpack',
 	\'coc-prettier'
 	\]
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 "coc-key
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
 nnoremap <silent><nowait> <space>cc  :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 "fzf
 nnoremap <space>r :Rg<CR>
