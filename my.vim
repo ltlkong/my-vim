@@ -84,7 +84,8 @@ let g:coc_global_extensions = [
 	\'coc-htmlhint',
 	\'coc-docker',
 	\'coc-webpack',
-	\'coc-prettier'
+	\'coc-prettier',
+	\'coc-tabnine'
 	\]
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
