@@ -74,8 +74,6 @@ let g:coc_global_extensions = [
 	\'coc-calc', 
 	\'coc-tsserver', 
 	\'coc-sql', 
-	\'coc-react-refactor',
-	\'coc-markdownlint', 
 	\'coc-phpls', 
 	\'coc-pyright',
 	\'coc-css', 

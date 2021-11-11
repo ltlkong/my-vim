@@ -4,19 +4,19 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e  ${RED}start installing vim${NC}
-sudo brew install -y vim
+brew install vim
 echo -e ${RED}finish${NC}
 
 echo -e  ${RED}start installing ripgrep${NC}
-sudo brew install -y ripgrep
+brew install ripgrep
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}start installing minimap${NC}
-sudo brew install -y code-minimap
+brew install code-minimap
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}start installing node${NC}
-sudo brew install node
+brew install node
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}start setting up vimrc${NC}
@@ -27,7 +27,7 @@ vim +silent +PlugInstall +CocInstall +qa
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}start setting CocConfig${NC}
-sudo cp ./coc-settings.json ~/.vim/
+cp ./coc-settings.json ~/.vim/
 echo -e ${RED}finish${NC}
 
 echo -e ${RED}success${NC}
