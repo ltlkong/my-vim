@@ -8,6 +8,8 @@ if ! command -v brew &> /dev/null
 then
 	echo -e  ${RED}start installing brew${NC}
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/tielinli/.zprofile
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 	echo -e ${RED}finish${NC}
 fi
 
