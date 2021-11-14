@@ -43,20 +43,23 @@ esac
 echo -e ${BLUE}finish${NC}
 
 #install and compile the newest vim
-echo -e  ${BLUE}start installing vim${NC}
-sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev
-sudo apt remove -y vim
-sudo rm /usr/local/bin/*vim*
-sudo rm /usr/bin/*vim*
-git clone https://github.com/vim/vim.git && cd vim
-echo -e  ${YELLOW}configuring the vim feature${NC}
-./configure --enable-pythoninterp=yes --enable-python3interp=yes --prefix=/usr/local/
-echo -e ${YELLOW}finish${NC}
-make && sudo make install
-cd ..
-rm -rf vim
-source ~/.bashrc
-echo -e ${BLUE}finish${NC}
+if ! command -v vim &> /dev/null
+then
+	echo -e  ${BLUE}start installing vim${NC}
+	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev
+	sudo apt remove -y vim
+	sudo rm /usr/local/bin/*vim*
+	sudo rm /usr/bin/*vim*
+	git clone https://github.com/vim/vim.git && cd vim
+	echo -e  ${YELLOW}configuring the vim feature${NC}
+	./configure --enable-pythoninterp=yes --enable-python3interp=yes --prefix=/usr/local/
+	echo -e ${YELLOW}finish${NC}
+	make && sudo make install
+	cd ..
+	rm -rf vim
+	source ~/.bashrc
+	echo -e ${BLUE}finish${NC}
+fi
 
 #install ripgrep for fzf plugin
 echo -e  ${BLUE}start installing ripgrep${NC}
