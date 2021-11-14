@@ -4,9 +4,19 @@ brew update
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e  ${RED}start installing vim${NC}
-brew install vim
-echo -e ${RED}finish${NC}
+if ! command -v brew &> /dev/null
+then
+	echo -e  ${RED}start installing brew${NC}
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo -e ${RED}finish${NC}
+fi
+
+if ! command -v vim &> /dev/null
+then
+	echo -e  ${RED}start installing vim${NC}
+	brew install vim
+	echo -e ${RED}finish${NC}
+fi
 
 echo -e  ${RED}start installing ripgrep${NC}
 brew install ripgrep
