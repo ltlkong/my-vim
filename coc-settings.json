@@ -1,13 +1,18 @@
 {
-  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "json",
-    "csharp",
-    "scss"
-  ]
+    "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+        "json",
+        "scss",
+        "python"
+    ],
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true,
+        "disableSuccessMessager": true
+    }
 }
