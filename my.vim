@@ -114,6 +114,11 @@ nnoremap <space>m :Maps<CR>
 nnoremap <space>c :Commands<CR>
 nnoremap <space>t :W<CR>
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%'  --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-i': 'split',
+  \ 'ctrl-s': 'vsplit' }
 
 "airline"
 let g:airline_theme="papercolor"
