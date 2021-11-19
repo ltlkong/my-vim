@@ -3,12 +3,12 @@
 Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 
 ## Example
-![example](https://i.ibb.co/80YZ94L/2021-08-25-3.png)
+![example](./Screen Shot 2021-11-19 at 10.27.34 AM.png)
 
 ## Installation
 
 - For Linux users, run./install.sh, it will install all the required dependencies for the vim an vimrc file.
-- For Mac users, run ./install-darwin.sh.(still in testing)
+- For Mac users, run ./install-darwin.sh.
 
 ## Plugs
 - NerdTree | &lt;C-t&gt;
