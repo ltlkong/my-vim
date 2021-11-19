@@ -3,7 +3,7 @@
 Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 
 ## Example
-![example](./Screen Shot 2021-11-19 at 10.27.34 AM.png)
+![example](https://github.com/ltlkong/my-vim/blob/main/Screen%20Shot%202021-11-19%20at%2010.27.34%20AM.png?raw=true)
 
 ## Installation
 
