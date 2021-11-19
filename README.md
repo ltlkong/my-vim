@@ -26,9 +26,9 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 	- Search word from the git files | &lt;space&gt;g
 	- Search key mapping | &lt;space&gt;m
 	- Search commands | &lt;space&gt;c
+	- Search tabs | &lt;space&gt;w
 - airline (vim status line and better tab)
 - indent line (show indent lines)
-- css-color (show color in css files)
 - vim surround:
 	- Change surround | cs
 	- Add surround | ys
