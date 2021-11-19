@@ -46,7 +46,7 @@ echo -e ${BLUE}finish${NC}
 if ! command -v vim &> /dev/null
 then
 	echo -e  ${BLUE}start installing vim${NC}
-	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev
+	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev python3-pip
 	sudo apt remove -y vim
 	sudo rm /usr/local/bin/*vim*
 	sudo rm /usr/bin/*vim*
@@ -89,6 +89,11 @@ case $(uname -m) in
 	*) installMiniMap $MINIMAPAMD64
 		;;
 esac
+echo -e ${BLUE}finish${NC}
+
+#install vim-plug and set up vimrc
+echo -e ${BLUE}start installing up bat${NC}
+sudo apt install bat
 echo -e ${BLUE}finish${NC}
 
 #install vim-plug and set up vimrc

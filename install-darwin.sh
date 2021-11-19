@@ -32,6 +32,10 @@ echo -e ${RED}start installing node${NC}
 brew install node
 echo -e ${RED}finish${NC}
 
+echo -e ${RED}start installing bat${NC}
+brew install bat
+echo -e ${RED}finish${NC}
+
 echo -e ${RED}start setting up vimrc${NC}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

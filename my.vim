@@ -112,6 +112,8 @@ nnoremap <space>gs :GFiles?<CR>
 nnoremap <space>g :GFiles<CR>
 nnoremap <space>m :Maps<CR>
 nnoremap <space>c :Commands<CR>
+nnoremap <space>t :W<CR>
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%'  --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 "airline"
 let g:airline_theme="papercolor"
