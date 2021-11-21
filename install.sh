@@ -18,9 +18,6 @@ if [ $(uname) == 'Darwin' ]
 
 brew update
 
-RED='\033[0;31m'
-NC='\033[0m'
-
 if ! command -v brew &> /dev/null
 then
 	echo -e  ${RED}start installing brew${NC}
@@ -134,20 +131,21 @@ case $(uname -m) in
 esac
 echo -e ${BLUE}finish${NC}
 
-#install vim-plug and set up vimrc
+#install others
 echo -e ${BLUE}start installing up bat${NC}
-sudo apt install bat
-echo -e ${BLUE}finish${NC}
-
-#install vim-plug and set up vimrc
-echo -e ${BLUE}start installing up vimrc${NC}
+sudo apt install bat -y
 sudo apt install curl -y
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo -e ${BLUE}finish${NC}
 
 fi
 
+#install vim-plug and set up vimrc
+echo -e ${BLUE}start installing up vimrc${NC}
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo -e ${BLUE}finish${NC}
+
+# Set up vimrc
 source ./setup.sh
 
 echo -e ${BLUE}success${NC}
