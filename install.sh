@@ -14,6 +14,7 @@ then
 fi
 
 if [ $(uname) == 'Darwin' ]
+then
 #Mac
 
 brew update
