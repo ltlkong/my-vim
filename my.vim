@@ -10,9 +10,9 @@ call plug#begin()
 				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
-	Plug 'NLKNguyen/papercolor-theme'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'jiangmiao/auto-pairs'
+	Plug 'morhetz/gruvbox'
 call plug#end()
 						
 "Default
@@ -37,21 +37,8 @@ set cursorline
 nnoremap <C-i> <C-i>
 
 "Theme
-let g:PaperColor_Theme_Options = {
-	\   'theme': {
-	\     'default': {
-	\       'transparent_background': 1
-  	\     }
-  	\   }
-  	\ }
-set t_Co=256
+colorscheme gruvbox
 set background=dark
-
-"if strftime("%H") < 10
-"	set background=light
-"else
-"	set background=dark
-"endif
 
 "NerdTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
@@ -120,7 +107,7 @@ let g:fzf_action = {
   \ 'ctrl-s': 'vsplit' }
 
 "airline"
-let g:airline_theme="papercolor"
+let g:airline_theme="base16"
 let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
