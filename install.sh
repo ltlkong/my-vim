@@ -51,6 +51,10 @@ echo -e ${RED}start installing bat${NC}
 brew install bat
 echo -e ${RED}finish${NC}
 
+echo -e ${RED}start installing curl${NC}
+brew install curl
+echo -e ${RED}finish${NC}
+
 else
 # Linux
 
@@ -133,7 +137,7 @@ esac
 echo -e ${BLUE}finish${NC}
 
 #install others
-echo -e ${BLUE}start installing up bat${NC}
+echo -e ${BLUE}start installing bat curl${NC}
 sudo apt install bat -y
 sudo apt install curl -y
 echo -e ${BLUE}finish${NC}
