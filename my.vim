@@ -1,5 +1,5 @@
 call plug#begin()
-	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
+	Plug 'preservim/nerdtree',{'on': 'NERDTreeMirror'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 	Plug 'tpope/vim-fugitive'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
@@ -41,8 +41,12 @@ colorscheme gruvbox
 set background=dark
 
 "NerdTree
-nnoremap <silent><C-t> :NERDTreeToggle<CR>
+nnoremap <silent><C-t> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
 let g:NERDTreeWinSize=22
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 "coc
 set nobackup
@@ -70,7 +74,9 @@ let g:coc_global_extensions = [
 	\'coc-docker',
 	\'coc-webpack',
 	\'coc-prettier',
-	\'coc-tabnine'
+	\'coc-tabnine',
+	\'coc-spell-checker',
+	\'coc-java'
 	\]
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
@@ -137,5 +143,4 @@ augroup numbertoggle
 augroup END
 
 "easymotion
-let g:EasyMotion_do_mapping = 0
-nmap  <Leader>w <Plug>(easymotion-bd-w)
+map  <Leader>w <Plug>(easymotion-bd-w)
