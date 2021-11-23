@@ -1,6 +1,7 @@
 call plug#begin()
 	Plug 'preservim/nerdtree',{'on': 'NERDTreeMirror'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
+				\ Plug 'PhilRunninger/nerdtree-visual-selection'
 	Plug 'tpope/vim-fugitive'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
 				\ Plug 'antoinemadec/coc-fzf'
