@@ -145,3 +145,4 @@ augroup END
 
 "easymotion
 map  <Leader>w <Plug>(easymotion-bd-w)
+

@@ -8,6 +8,6 @@ cat my.vim > ~/.vimrc
 vim +silent +PlugInstall +qa
 # Setup coc
 mkdir -p ~/.config/coc/
-cp ./coc-settings.json ~/.vim/
-cp -r ./ultisnips ~/.config/coc/
+cp ./settings/coc-settings.json ~/.vim/
+cp -r ./settings/ultisnips ~/.config/coc/
 echo -e ${BLUE}finish${NC}
