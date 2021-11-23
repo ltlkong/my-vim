@@ -16,13 +16,12 @@ call plug#begin()
 	Plug 'morhetz/gruvbox'
 call plug#end()
 						
-"Default
+" Default ---
 let mapleader = ","
-au BufNewFile,BufRead *.cshtml set filetype=html
 set encoding=UTF-8
-set hidden
 set shiftwidth=4
 set tabstop=4
+set expandtab
 set autoindent
 set smarttab
 set smartindent
@@ -32,16 +31,29 @@ set wildmenu
 set splitbelow splitright
 set	backspace=indent,eol,start
 set incsearch
+set ignorecase
 set smartcase
 set signcolumn=auto
 set cursorline
+set mouse=a
+set history=100
 nnoremap <C-i> <C-i>
+au BufNewFile,BufRead *.cshtml set filetype=html
 
-"Theme
+" Line number ---
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
+" Theme ---
 colorscheme gruvbox
 set background=dark
 
-"NerdTree
+" NerdTree ---
 nnoremap <silent><C-t> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
 let g:NERDTreeWinSize=22
 " Exit Vim if NERDTree is the only window remaining in the only tab.
@@ -49,7 +61,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-"coc
+" Coc ---
 set nobackup
 set nowritebackup
 set updatetime=500
@@ -81,10 +93,11 @@ let g:coc_global_extensions = [
 	\]
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-"coc-key
+" Coc key mappings
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
 nnoremap <silent><nowait> <space>cc  :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
+" Allow tab switch between completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -98,7 +111,7 @@ endfunction
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-"fzf
+" Fzf ---
 nnoremap <space>r :Rg<CR>
 nnoremap <space>f :Files<CR>
 nnoremap <space>l :BLines<CR>
@@ -113,36 +126,24 @@ let g:fzf_action = {
   \ 'ctrl-i': 'split',
   \ 'ctrl-s': 'vsplit' }
 
-"airline"
+" Airline ---
 let g:airline_theme="base16"
 let airline#extensions#tabline#enabled=1
 let g:airlin_highlighting_cache=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#coc#enabled = 1
 
-"indentline"
-let g:indentLine_defaultGroup='SpecialKey'
-
-"minimap"
+" Minimap ---
 let g:minimap_width=12
 let g:minimap_git_colors=1
 nnoremap <silent><C-y> :MinimapToggle<CR>
 
-"Tabs
+" Tabs ---
 nnoremap tt :tabnew<CR>
 
-"Terminal
+" Terminal ---
 set tws=10*0
 
-"Line number
-set number
-
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-augroup END
-
-"easymotion
+" Easymotion ---
 map  <Leader>w <Plug>(easymotion-bd-w)
 
