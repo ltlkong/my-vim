@@ -7,9 +7,9 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 
 ## Installation
 
-- For Linux and Mac users, run./install.sh, it will install all the required dependencies for the vim an vimrc file.
+- For Linux and Mac users, run./install.sh, it will install all the required dependencies for the vim and setup the vimrc file.
 
-## Plugs
+## Plugs and key mapping &lt;leader&gt; is ,(comma)
 - NerdTree | &lt;C-t&gt;
 - minimap | &lt;C-y&gt;
 - fugitive (https://github.com/tpope/vim-fugitive.git')
@@ -19,7 +19,7 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 	- Show diagnostic | &lt;space&gt;d
 - fzf (fuzzy search):
 	- Search word recursively from the current directory | &lt;space&gt;r
-	- Search file from the current directory | &lt;space&gt;r
+	- Search file from the current directory | &lt;space&gt;f
 	- Search line from the current buffer | &lt;space&gt;l
 	- Search word from the git status | &lt;space&gt;gs
 	- Search word from the git files | &lt;space&gt;g

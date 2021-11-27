@@ -29,7 +29,7 @@ set wrap
 set lazyredraw
 set wildmenu
 set splitbelow splitright
-set	backspace=indent,eol,start
+set backspace=indent,eol,start
 set incsearch
 set ignorecase
 set smartcase
@@ -89,7 +89,9 @@ let g:coc_global_extensions = [
 	\'coc-prettier',
 	\'coc-tabnine',
 	\'coc-spell-checker',
-	\'coc-java'
+	\'coc-java',
+    \'coc-markdown-preview-enhanced',
+    \'coc-webview'
 	\]
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
@@ -97,6 +99,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
 nnoremap <silent><nowait> <space>cc  :<C-u>CocFzfList commands<cr>
 nnoremap <silent><nowait> <space>d  :<C-u>CocFzfList diagnostics<cr>
+
 " Allow tab switch between completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
