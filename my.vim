@@ -1,5 +1,5 @@
 call plug#begin()
-	Plug 'preservim/nerdtree',{'on': 'NERDTreeMirror'}|
+	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 				\ Plug 'PhilRunninger/nerdtree-visual-selection'
 	Plug 'tpope/vim-fugitive'
@@ -54,7 +54,7 @@ colorscheme gruvbox
 set background=dark
 
 " NerdTree ---
-nnoremap <silent><C-t> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
+nnoremap <silent><C-t> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 let g:NERDTreeWinSize=22
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
