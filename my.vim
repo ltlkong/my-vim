@@ -158,4 +158,3 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 
 " Theme ---
 set background=dark
-colorscheme gruvbox
