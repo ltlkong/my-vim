@@ -15,7 +15,10 @@ call plug#begin()
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'morhetz/gruvbox'
 call plug#end()
-						
+
+" Others ---
+let architecture = system('uname -m')
+
 " Default ---
 let mapleader = ","
 set encoding=UTF-8
@@ -49,10 +52,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
-" Theme ---
-colorscheme gruvbox
-set background=dark
-
 " NerdTree ---
 nnoremap <silent><C-t> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 let g:NERDTreeWinSize=22
@@ -69,7 +68,8 @@ set shortmess+=c
 set pumheight=10
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 let g:coc_disable_startup_warning=1
-let g:coc_global_extensions = [
+
+let coc_extensions_list = [
 	\'coc-git',
 	\'coc-grammarly', 
 	\'coc-marketplace', 
@@ -87,12 +87,18 @@ let g:coc_global_extensions = [
 	\'coc-docker',
 	\'coc-webpack',
 	\'coc-prettier',
-	\'coc-tabnine',
 	\'coc-spell-checker',
 	\'coc-java',
-    \'coc-markdown-preview-enhanced',
-    \'coc-webview'
+    \'coc-webview',
+    \'coc-markdown-preview-enhanced'
 	\]
+
+if architecture != "aarch64"
+    let coc_extensions_list += ['coc-tabnine']
+endif
+
+let g:coc_global_extensions = coc_extensions_list
+
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc key mappings
@@ -150,3 +156,6 @@ set tws=10*0
 " Easymotion ---
 map  <Leader>w <Plug>(easymotion-bd-w)
 
+" Theme ---
+set background=dark
+colorscheme gruvbox

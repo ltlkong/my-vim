@@ -10,4 +10,5 @@ vim +silent +PlugInstall +qa
 mkdir -p ~/.config/coc/
 cp ./settings/coc-settings.json ~/.vim/
 cp -r ./settings/ultisnips ~/.config/coc/
+echo "colorscheme gruvbox" >> ~/.vimrc
 echo -e ${BLUE}finish${NC}
