@@ -96,7 +96,7 @@ then
 	sudo apt remove -y vim
 	rm /usr/local/bin/*vim*
 	rm /usr/bin/*vim*
-	sudo apt install neovim
+	sudo apt install neovim -y
 	source ~/.bashrc
 	echo -e ${BLUE}finish${NC}
 fi
