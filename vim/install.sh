@@ -93,8 +93,6 @@ then
 	echo -e  ${BLUE}start installing vim${NC}
 	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev python3-pip
 	sudo apt remove -y vim
-	sudo rm /usr/local/bin/*vim*
-	sudo rm /usr/bin/*vim*
 	git clone https://github.com/vim/vim.git && cd vim
 	echo -e  ${YELLOW}configuring the vim feature${NC}
 	./configure --enable-pythoninterp=yes --enable-python3interp=yes --prefix=/usr/local/

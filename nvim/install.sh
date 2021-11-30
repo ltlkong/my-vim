@@ -94,8 +94,6 @@ then
 	echo -e  ${BLUE}start installing vim${NC}
 	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev python3-pip
 	sudo apt remove -y vim
-	rm /usr/local/bin/*vim*
-	rm /usr/bin/*vim*
 	sudo apt install neovim -y
 	source ~/.bashrc
 	echo -e ${BLUE}finish${NC}

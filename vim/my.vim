@@ -75,7 +75,7 @@ let coc_extensions_list = [
     \'coc-markdown-preview-enhanced'
 	\]
 
-if architecture != "aarch64"
+if architecture != "aarch64\n"
     let coc_extensions_list += ['coc-tabnine']
 endif
 
