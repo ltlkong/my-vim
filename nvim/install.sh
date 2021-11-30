@@ -63,7 +63,7 @@ sudo apt update
 
 #install v14.17.5 node
 echo -e ${BLUE}start installing node${NC}
-apt remove -y nodejs
+sudo apt remove -y nodejs
 NODEAMD64='node-v14.17.5-linux-x64'
 NODEAARCH64='node-v14.17.5-linux-arm64'
 NODEARMV7='node-v14.17.5-linux-armv7l'
@@ -92,18 +92,18 @@ echo -e ${BLUE}finish${NC}
 if ! command -v nvim &> /dev/null
 then
 	echo -e  ${BLUE}start installing vim${NC}
-	apt install -y libncurses-dev make gcc python3 python python3-dev python-dev python3-pip
-	apt remove -y vim
+	sudo apt install -y libncurses-dev make gcc python3 python python3-dev python-dev python3-pip
+	sudo apt remove -y vim
 	rm /usr/local/bin/*vim*
 	rm /usr/bin/*vim*
-	apt install neovim
+	sudo apt install neovim
 	source ~/.bashrc
 	echo -e ${BLUE}finish${NC}
 fi
 
 #install ripgrep for fzf plugin
 echo -e  ${BLUE}start installing ripgrep${NC}
-apt install -y ripgrep
+sudo apt install -y ripgrep
 echo -e ${BLUE}finish${NC}
 
 #install minimap for minimap plugin
@@ -133,8 +133,8 @@ echo -e ${BLUE}finish${NC}
 
 #install others
 echo -e ${BLUE}start installing bat curl${NC}
-apt install bat -y
-apt install curl -y
+sudo apt install bat -y
+sudo apt install curl -y
 echo -e ${BLUE}finish${NC}
 
 fi
