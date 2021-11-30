@@ -72,7 +72,8 @@ let coc_extensions_list = [
 	\'coc-spell-checker',
 	\'coc-java',
     \'coc-webview',
-    \'coc-markdown-preview-enhanced'
+    \'coc-markdown-preview-enhanced',
+    \'coc-lightbulb'
 	\]
 
 if stridx(architecture, "aarch64") == -1
