@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt update && \
-    apt -y install sudo git wget
+    apt -y install sudo git wget curl
 COPY ./ /root/my.vim/
-WORKDIR /root/my.vim/vim/
-RUN echo "y" | ./install.sh
+WORKDIR /root/my.vim/
+RUN echo "vim" | ./install.sh
