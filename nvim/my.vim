@@ -138,3 +138,7 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 " Theme ---
 set background=dark
 colorscheme gruvbox
+
+" Terminal
+command! T split | resize15 | terminal
+tnoremap <C-W><C-N> <C-\><C-N>
