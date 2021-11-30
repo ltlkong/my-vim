@@ -58,7 +58,7 @@ echo -e ${RED}finish${NC}
 else
 # Linux
 
- apt update
+sudo apt update
 
 #install v14.17.5 node
 echo -e ${BLUE}start installing node${NC}
@@ -145,7 +145,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 echo -e ${BLUE}finish${NC}
 
 # Set up vimrc
-source ./n-setup.sh
+source ./setup.sh
 
 echo -e ${BLUE}success${NC}
 
