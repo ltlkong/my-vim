@@ -5,11 +5,11 @@ BLUE='\033[0;34m'
 # Setup vimrc
 echo -e ${BLUE}start setting up myvim${NC}
 mkdir -p ~/.config/nvim/
-cat my.vim > ~/.config/nvim/init.vim
+cat ../plugins.vim > ~/.vimrc
 nvim +silent +PlugInstall +qa
+cat my.vim >> ~/.config/nvim/init.vim
 # Setup coc
 mkdir -p ~/.config/coc/
 cp ../settings/coc-settings.json ~/.config/nvim/coc-settings.json
 cp -r ../settings/ultisnips ~/.config/coc/
-echo "colorscheme gruvbox" >> ~/.config/nvim/init.vim
 echo -e ${BLUE}finish${NC}
