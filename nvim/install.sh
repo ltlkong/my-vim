@@ -31,6 +31,7 @@ fi
 if ! command -v nvim &> /dev/null
 then
 	echo -e  ${RED}start installing vim${NC}
+    pip3 install --upgrade pynvim
 	brew install neovim
 	echo -e ${RED}finish${NC}
 fi
