@@ -35,12 +35,14 @@ augroup numbertoggle
 augroup END
 
 " NerdTree ---
-nnoremap <silent><C-t> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=22
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Mirror nerdtre
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Coc ---
 set nobackup
@@ -48,7 +50,6 @@ set nowritebackup
 set updatetime=500
 set shortmess+=c
 set pumheight=10
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 let g:coc_disable_startup_warning=1
 
 let coc_extensions_list = [
@@ -82,7 +83,6 @@ endif
 
 let g:coc_global_extensions = coc_extensions_list
 
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Coc key mappings
 nnoremap <silent><nowait> <space>o  :<C-u>CocFzfList outline<cr>
@@ -118,13 +118,6 @@ let g:fzf_action = {
   \ 'ctrl-i': 'split',
   \ 'ctrl-s': 'vsplit' }
 
-" Airline ---
-let g:airline_theme="base16"
-let airline#extensions#tabline#enabled=1
-let g:airlin_highlighting_cache=1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#coc#enabled = 1
-
 " Minimap ---
 let g:minimap_width=12
 let g:minimap_git_colors=1
@@ -133,8 +126,11 @@ nnoremap <silent><C-y> :MinimapToggle<CR>
 " Tabs ---
 nnoremap tt :tabnew<CR>
 
-" Easymotion ---
-map  <Leader>w <Plug>(easymotion-bd-w)
+" Hop ---
+lua << END
+require'hop'.setup()
+END
+nnoremap <silent><leader>w :HopWord<CR>
 
 " Theme ---
 set background=dark
@@ -165,16 +161,26 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
+   autotag = {
+    enable = true,
+  }
 }
 EOF
 
 " Rainbow bracket
 lua <<EOF
 require("nvim-treesitter.configs").setup {
+  highlight = {
+      -- ...
+  },
+  -- ...
   rainbow = {
     enable = true,
-    extended_mode = true,
-    max_file_lines = nil, 
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
   }
 }
 EOF
@@ -194,7 +200,9 @@ require'lualine'.setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 
                   {'diagnostics', sources={'nvim_lsp', 'coc'}}},
-    lualine_c = {'filename'},
+    lualine_c = {
+                'filename'
+			},
     lualine_x = {'encoding', 'filesize', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -208,7 +216,7 @@ require'lualine'.setup {
       lualine_z = {'buffers'}
     },
 
-  extensions = {'fugitive','nerdtree','fzf'}
+  extensions = {"fzf",'nerdtree','fugitive'}
 }
 END
 

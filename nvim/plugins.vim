@@ -1,5 +1,5 @@
 call plug#begin()
-	Plug 'preservim/nerdtree',{'on': 'NERDTreeToggle'}|
+	Plug 'preservim/nerdtree'|
 				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
 				\ Plug 'PhilRunninger/nerdtree-visual-selection'
 	Plug 'tpope/vim-fugitive'
@@ -9,15 +9,13 @@ call plug#begin()
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
-	Plug 'easymotion/vim-easymotion'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'morhetz/gruvbox'
     Plug 'mfussenegger/nvim-dap'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
                 \ Plug 'p00f/nvim-ts-rainbow' |
                 \ Plug 'windwp/nvim-ts-autotag' |
-                \ Plug 'theHamsta/nvim-dap-virtual-text'
-    Plug 'nvim-lualine/lualine.nvim' |
+                \ Plug 'theHamsta/nvim-dap-virtual-text' 
+    Plug 'nvim-lualine/lualine.nvim' 
+    Plug 'phaazon/hop.nvim' 
 call plug#end()
-
-
