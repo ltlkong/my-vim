@@ -140,6 +140,48 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 set background=dark
 colorscheme gruvbox
 
-" Terminal
+" Terminal ---
 command! T split | resize15 | terminal
 tnoremap <C-W><C-N> <C-\><C-N>
+
+" Treesitter ---
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}
+EOF
+
+" Rainbow bracket
+lua <<EOF
+require("nvim-treesitter.configs").setup {
+  highlight = {
+      -- ...
+  },
+  -- ...
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  }
+}
+EOF

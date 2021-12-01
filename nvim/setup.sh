@@ -6,6 +6,7 @@ BLUE='\033[0;34m'
 echo -e ${BLUE}start setting up myvim${NC}
 mkdir -p ~/.config/nvim/
 cat ../plugins.vim > ~/.config/nvim/init.vim
+cat treesitter.vim >> ~/.config/nvim/init.vim
 nvim +silent +PlugInstall +qa
 cat my.vim >> ~/.config/nvim/init.vim
 # Setup coc

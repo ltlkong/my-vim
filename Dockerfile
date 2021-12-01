@@ -1,5 +1,5 @@
 FROM ubuntu
-ENV VIMVERSION=vim
+ENV VIMVERSION=nvim
 RUN apt update && \
     apt -y install sudo git wget curl
 COPY ./ /root/my.vim/
