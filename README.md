@@ -7,7 +7,7 @@ Supported Debian Linux (aarch64, armv7l, x86_64) and Mac os (darwin)
 
 ## Installation
 
-- For Linux and Mac users, run./install.sh, it will install all the required dependencies for the vim and setup the vimrc file.
+- For Linux and Mac users, run./install.sh, it will install all the required dependencies for the vim or nvim and setup the vimrc file.
 
 ## Plugs and key mapping &lt;leader&gt; is ,(comma)
 - NerdTree | &lt;C-t&gt;
