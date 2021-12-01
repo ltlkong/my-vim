@@ -185,3 +185,37 @@ require("nvim-treesitter.configs").setup {
   }
 }
 EOF
+
+" Lualine ---
+lua << END
+require'lualine'.setup {
+  options = {
+    icons_enabled = false,
+    theme = 'gruvbox',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 
+                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'filesize', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  tabline = {
+      lualine_a = {"os.date('%a')", 'data', "require'lsp-status'.status()"},
+      lualine_b = {'tabs'},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {'buffers'}
+    },
+
+  extensions = {}
+}
+END
+

@@ -7,14 +7,17 @@ call plug#begin()
 				\ Plug 'antoinemadec/coc-fzf'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
 				\ Plug 'junegunn/fzf.vim'
-	Plug 'vim-airline/vim-airline'|
-				\ Plug 'vim-airline/vim-airline-themes'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'morhetz/gruvbox'
+    Plug 'mfussenegger/nvim-dap'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
-                \ Plug 'p00f/nvim-ts-rainbow'
+                \ Plug 'p00f/nvim-ts-rainbow' |
+                \ Plug 'windwp/nvim-ts-autotag' |
+                \ Plug 'theHamsta/nvim-dap-virtual-text'
+    Plug 'nvim-lualine/lualine.nvim' |
 call plug#end()
+
 
