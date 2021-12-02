@@ -1,5 +1,5 @@
 " Others ---
-let architecture = system('uname -m')
+let g:architecture = substitute(system('uname -m'), '\n','','g')
 
 " Default ---
 let mapleader = ","
@@ -64,7 +64,7 @@ let coc_extensions_list = [
 	\'coc-phpls', 
 	\'coc-pyright',
 	\'coc-css', 
-	\'coc-omnisharp', 
+    \'coc-sh',
 	\'coc-snippets', 
 	\'coc-htmlhint',
 	\'coc-docker',
@@ -73,8 +73,8 @@ let coc_extensions_list = [
 	\'coc-spell-checker',
 	\'coc-java',
     \'coc-webview',
+    \'coc-omnisharp',
     \'coc-markdown-preview-enhanced',
-    \'coc-lightbulb'
 	\]
 
 if stridx(architecture, "aarch64") == -1
@@ -103,6 +103,8 @@ endfunction
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
 " Fzf ---
 nnoremap <space>r :Rg<CR>
 nnoremap <space>f :Files<CR>
@@ -167,24 +169,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" Rainbow bracket
-lua <<EOF
-require("nvim-treesitter.configs").setup {
-  highlight = {
-      -- ...
-  },
-  -- ...
-  rainbow = {
-    enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
-  }
-}
-EOF
-
 " Lualine ---
 lua << END
 require'lualine'.setup {
@@ -208,7 +192,7 @@ require'lualine'.setup {
     lualine_z = {'location'}
   },
   tabline = {
-      lualine_a = {"os.date('%a')", 'data', "require'lsp-status'.status()"},
+      lualine_a = {'g:architecture'},
       lualine_b = {'tabs'},
       lualine_c = {'filename'},
       lualine_x = {},
@@ -219,4 +203,6 @@ require'lualine'.setup {
   extensions = {"fzf",'nerdtree','fugitive'}
 }
 END
+
+" Lightbulb ---
 

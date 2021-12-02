@@ -13,7 +13,6 @@ call plug#begin()
 	Plug 'morhetz/gruvbox'
     Plug 'mfussenegger/nvim-dap'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
-                \ Plug 'p00f/nvim-ts-rainbow' |
                 \ Plug 'windwp/nvim-ts-autotag' |
                 \ Plug 'theHamsta/nvim-dap-virtual-text' 
     Plug 'nvim-lualine/lualine.nvim' 
