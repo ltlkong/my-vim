@@ -1,11 +1,11 @@
 call plug#begin()
-	Plug 'preservim/nerdtree'|
-				\ Plug 'Xuyuanp/nerdtree-git-plugin'|
+	Plug 'preservim/nerdtree',  { 'on':  'NERDTreeToggle' } |
+				\ Plug 'Xuyuanp/nerdtree-git-plugin' |
 				\ Plug 'PhilRunninger/nerdtree-visual-selection'
 	Plug 'tpope/vim-fugitive'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}|
+	Plug 'neoclide/coc.nvim', {'branch': 'release'} |
 				\ Plug 'antoinemadec/coc-fzf'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }|
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } |
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
@@ -17,4 +17,5 @@ call plug#begin()
                 \ Plug 'theHamsta/nvim-dap-virtual-text' 
     Plug 'nvim-lualine/lualine.nvim' 
     Plug 'phaazon/hop.nvim' 
+    Plug 'dstein64/vim-startuptime'
 call plug#end()
