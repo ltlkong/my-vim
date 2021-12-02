@@ -1,5 +1,5 @@
 " Others ---
-let architecture = system('uname -m')
+let g:architecture = substitute(system('uname -m'), '\n','','g')
 
 " Default ---
 let mapleader = ","
