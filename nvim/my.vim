@@ -52,7 +52,6 @@ let g:coc_disable_startup_warning=1
 
 let coc_extensions_list = [
 	\'coc-git',
-	\'coc-grammarly', 
 	\'coc-marketplace', 
 	\'coc-html',
 	\'coc-diagnostic',
@@ -180,7 +179,7 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 
-                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+                  {'diagnostics', sources={'nvim_diagnostics', 'coc'}}},
     lualine_c = {
                 'filename'
 			},
