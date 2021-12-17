@@ -179,7 +179,7 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 
-                  {'diagnostics', sources={'nvim_diagnostics', 'coc'}}},
+                    {'diagnostics', sources={'nvim_diagnostic', 'coc'}}},
     lualine_c = {
                 'filename'
 			},
