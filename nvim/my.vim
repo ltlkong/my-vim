@@ -61,7 +61,6 @@ let coc_extensions_list = [
 	\'coc-phpls', 
 	\'coc-pyright',
 	\'coc-css', 
-    \'coc-sh',
 	\'coc-snippets', 
 	\'coc-htmlhint',
 	\'coc-docker',
@@ -69,9 +68,7 @@ let coc_extensions_list = [
 	\'coc-prettier',
 	\'coc-spell-checker',
 	\'coc-java',
-    \'coc-webview',
     \'coc-omnisharp',
-    \'coc-markdown-preview-enhanced',
 	\]
 
 if stridx(architecture, "aarch64") == -1
@@ -197,5 +194,23 @@ require'lualine'.setup {
     },
 
   extensions = {"fzf",'nerdtree','fugitive'}
+}
+END
+
+" Rainbow bracket
+lua << END
+require("nvim-treesitter.configs").setup {
+  highlight = {
+      -- ...
+  },
+  -- ...
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = 500, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  }
 }
 END

@@ -14,7 +14,8 @@ call plug#begin()
     Plug 'mfussenegger/nvim-dap'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
                 \ Plug 'windwp/nvim-ts-autotag' |
-                \ Plug 'theHamsta/nvim-dap-virtual-text' 
+                \ Plug 'theHamsta/nvim-dap-virtual-text' |
+                \ Plug 'p00f/nvim-ts-rainbow'
     Plug 'nvim-lualine/lualine.nvim' 
     Plug 'phaazon/hop.nvim' 
     Plug 'dstein64/vim-startuptime'
