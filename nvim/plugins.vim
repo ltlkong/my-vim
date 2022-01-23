@@ -9,7 +9,6 @@ call plug#begin()
 				\ Plug 'junegunn/fzf.vim'
 	Plug 'wfxr/minimap.vim', {'on': 'MinimapToggle'}
 	Plug 'tpope/vim-surround'
-	Plug 'jiangmiao/auto-pairs'
 	Plug 'morhetz/gruvbox'
     Plug 'mfussenegger/nvim-dap'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} |
